@@ -1,0 +1,153 @@
+body {
+    background-color: rgb(255, 255, 255);
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    z-index: 1;
+}
+
+.nav_nombre {
+    font-size: 2 rem;
+    font-weight: bold;
+    margin-left: .2rem;
+}
+
+.nav_git {
+    font-size: 2 rem;
+    font-weight: lighter;
+    cursor: pointer;
+}
+
+.nav_opciones {
+    margin-left: 1rem;
+    cursor: pointer;
+}
+
+.nav_enlaces {
+    display: flex;
+    align-items: center;
+}
+
+.has-dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #000000;
+    border-top: none;
+}
+
+.has-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #000000;
+}
+
+.dropdown-content a:hover {
+    background-color: #f5f5f5;
+}
+
+.separador {
+    margin-left: 1rem;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(102, 0, 128);
+}
+
+/* Presentacion */
+
+.presentacion {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #e5cdf0 ;
+}
+
+.curso {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #e5cdf0 ;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #ffffff ;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f1e2f8 ;
+}
+
+/*primer corte */
+
+.temas {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #e5cdf0;
+    border-radius: 10px;
+    background-color: #e5cdf07c ;
+
+}
+
+.temas h2 {
+    color: #333;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.temas ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.temas li {
+    margin-bottom: 10px;
+}
+.imagen-primerc {
+    border: 2px solid #000000; 
+    border-radius: 8px; 
+    width: 1200px;
+    height: auto;
+    display: block; 
+    margin: 0 auto; 
+}
+
+/* segundo corte*/
+p.poo {
+
+    margin-left: 20px; 
+}

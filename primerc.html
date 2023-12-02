@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>primer corte</title>
+
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <header>
+
+        <nav class="nav">
+            <div class="nav_info">
+                <li>
+                    <a href="index.html">
+                        <h1 class="nav_git">Pagina personal <span class="nav_nombre">Lenguajes de
+                                Programación</span>
+                        </h1>
+                    </a>
+                </li>
+            </div>
+            <ul class="">
+                <div class="nav_enlaces">
+                    <li class="nav_opciones">
+                        <a href="index.html">Inicio</a>
+                    </li>
+                    <p class="separador">/</p>
+
+                    <li class="nav_opciones">
+                        <a href="curso.html">Curso</a>
+                    </li>
+                    <p class="separador">/</p>
+
+                    <li class="nav_opciones has-dropdown" id="academico-dropdown">
+                        <a href="#">Cortes</a>
+                        <div class="dropdown-content">
+                            <a href="primerc.html">Primer corte</a>
+                            <a href="segundoc.html">Segundo corte</a>
+                            <a href="tercerc.html">Tercer corte</a>
+
+                        </div>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="temas">
+        <h1>Temas Vistos en el Primer Corte</h1>
+        <ul>
+            <li><strong>
+                    <h2>Python como lenguaje:</h2>
+                </strong>
+                <p class="temas-texto">
+                    Python, nuestro lenguaje de elección para el primer corte, es una herramienta de programación de
+                    alto nivel
+                    , interpretado y versátil. Su distintiva sintaxis clara y legible no solo simplifica el desarrollo
+                    de
+                    aplicaciones, sino que también facilita la resolución de problemas.
+                </p>
+            </li>
+
+            <li><strong>
+                    <h2>Características de Python:</h2>
+                </strong>
+                <p class="temas-texto">
+                    <strong> Nivel:</strong> Python es considerado un lenguaje de programación de alto nivel.
+                    Esto indica que proporciona abstracciones y estructuras de datos de alto nivel
+                    que simplifican la tarea del programador. En lugar de lidiar con detalles de
+                    bajo nivel, los desarrolladores pueden centrarse en la lógica del programa.
+                </p>
+                <p class="temas-texto">
+                    <strong>Multiparadigma: </strong> Python es multiparadigma, lo que significa que admite varios
+                    estilos
+                    de programación. Puede utilizarse tanto en programación orientada a objetos como en
+                    programación imperativa y funcional. Esto brinda a los desarrolladores flexibilidad
+                    para elegir el enfoque que mejor se adapte a sus necesidades y al problema que están abordando.
+                </p>
+                <p class="temas-texto">
+                    <strong>Interpretado:</strong> Python es un lenguaje interpretado, lo que implica que el código
+                    fuente
+                    no se compila directamente en un código de máquina, sino que es ejecutado línea por
+                    línea por un intérprete. Esto facilita la portabilidad del código, ya que el mismo
+                    script de Python puede ejecutarse en diferentes sistemas operativos siempre que tengan
+                    un intérprete de Python instalado.
+                </p>
+            </li>
+
+            <li><strong>
+                    <h2>Lenguajes Imperativos y Declarativos:</h2>
+                </strong>
+                <p class="temas-texto">
+                    <strong>Lenguajes Imperativos:</strong> Los lenguajes imperativos son aquellos en los que el
+                    programador especifica de manera detallada cómo se deben llevar a cabo las operaciones. Se
+                    centran en la descripción de los pasos o instrucciones que la computadora debe seguir para
+                    ejecutar un programa. Estos lenguajes se basan en el cambio explícito de estado y a menudo
+                    utilizan estructuras de control de flujo para dirigir la ejecución secuencial del programa.
+                </p>
+                <p class="temas-texto">
+                    <strong>Lenguajes Declarativos:</strong> Los lenguajes declarativos son aquellos en los que el
+                    programador se enfoca en describir el resultado deseado o la relación entre las entradas y las
+                    salidas, sin especificar explícitamente los pasos detallados para lograrlo. Estos lenguajes
+                    tienden a ocultar la complejidad de la ejecución y se centran más en la lógica y la relación entre
+                    las entidades del programa. Pueden incluir lenguajes funcionales, lenguajes de consulta y otros
+                    paradigmas que hacen énfasis en la "qué" en lugar del "cómo".
+                </p>
+            </li>
+
+            <li><strong>
+                    <h2>Programacion Funcional y Funciones de Alto Orden:</h2>
+                </strong>
+                <p calss="temas-texto">
+                    <strong>Programacion funcional:</strong>
+                    La programación funcional es un paradigma de programación que se basa en el uso de funciones
+                    puras, evita el cambio de estados y datos mutables, y favorece conceptos como inmutabilidad,
+                    recursión, y composición de funciones. Se centra en la evaluación de funciones matemáticas y
+                    busca escribir código expresivo y declarativo.
+                </p>
+                <p calss="temas-texto">
+                    <strong>Funciones de alto orden:</strong>
+                    Las funciones de alto orden son un concepto importante en programación funcional y se refieren
+                    a funciones que pueden aceptar otras funciones como argumentos y/o devolver funciones como
+                    resultados. Esto permite construir abstracciones más poderosas y expresivas en el código. En
+                    Python, tres funciones de alto orden comunes son filter, map, y reduce, que operan sobre
+                    secuencias de datos como listas.
+                </p>
+                <p class="temas-texto">
+                    <strong> Filter:</strong> La funcion <strong>Filter()</strong> devuelve un iterador donde los
+                    elementos se filtran atraves de una funcion para probar si el elemento es aceptado o no.
+                </p>
+                <pre><code>
+                def convertir_y_filtrar(estudiante):
+                if estudiante["Vegetariano"]:
+                    return {
+                        "nombre": estudiante["nombre"].lower(),
+                        "Edad": estudiante["Edad"] / 12,
+                        "Vegetariano": estudiante["Vegetariano"]
+                    }
+            
+                listaEstudiantes = [ 
+                {"nombre": "Diego", "Edad": 552, "Vegetariano": False},
+                {"nombre": "Diana", "Edad": 480, "Vegetariano": False},
+                {"nombre": "Camila", "Edad": 312, "Vegetariano": True}
+                ]
+            
+                listaEdadAniosVegetarianos = list(filter(lambda x: x is not None, map(convertir_y_filtrar, listaEstudiantes)))
+                print(listaEdadAniosVegetarianos)
+            </code></pre>
+                <p class="temas-texto">
+                    En este código, el filter hace el trabajo pesado de sacar de la lista generada por map a los
+                    estudiantes que no son vegetarianos. Al final, lo que queda es una lista con la información
+                    convertida solo para los estudiantes que se declaran vegetarianos.
+                </p>
+
+
+
+                <p class="temas-texto">
+                    <strong>Map:</strong> Recibe dos parámetros de entrada: una función y uno o varios iteradores.
+                    La función <strong>map()</strong> ejecuta la función especificada para cada elemento en uno o más
+                    iteradores.
+                    Cada elemento correspondiente de los iteradores se pasa como argumento a la función, y el
+                    resultado es un nuevo iterable que contiene los resultados de aplicar la función a cada conjunto
+                    de elementos correspondientes.
+                <pre><code>
+                def convertirAAnios(x):
+                    return {
+                        x["nombre"].lower(),
+                        x["Edad"]/12,
+                        x["Vegetariano"]
+                    }
+
+                def filtrarVegetarianos(x):
+                    x["Vegetariano"] = True
+
+                listaEstudiantes = [ 
+                    {"nombre":"Diego","Edad":552,"Vegetariano":False},
+                    {"nombre":"Diana","Edad":480,"Vegetariano":False},
+                    {"nombre":"Camila","Edad":312,"Vegetariano":True}
+                ]
+
+                listaEdadAnios = list(map(convertirAAnios,listaEstudiantes))
+                print(listaEdadAnios)
+
+                listaVegetarianos = list(filter(lambda x:x["Vegetariano"]==True,listaEstudiantes))
+                listaEdadAnios = list(map(convertirAAnios,listaVegetarianos))
+                print(listaEdadAnios)
+            </code></pre>
+            <p class="temas-texto">
+                En este código, map cumple la tarea de aplicar la función convertirAAnios a cada 
+                estudiante de la lista listaEstudiantes. La función transforma la información de 
+                cada estudiante en un diccionario con el nombre en minúsculas, la edad convertida
+                de meses a años y la etiqueta vegetariano. Posteriormente, la lista resultante, 
+                listaEdadAnios, representa la información convertida para todos los estudiantes
+                en la lista original.
+            </p>
+
+
+
+                <p class="temas-texto">
+                    <strong>Reduce:</strong> Reduce no viene incluido en python, hay que llamarlo con "from functools
+                    import reduce".
+                    La funcion <strong>reduce()</strong> acepta una funcion, una secuencia y devuelve un unico valor.
+                </p>
+                <pre><code>
+                from functools import reduce
+
+                def MiSuma(a,b):
+                    return a+b
+
+                listaNumerosPares = list(range(2,101,2))
+                print(listaNumerosPares)
+
+                suma = 0
+                for i in listaNumerosPares:
+                    suma = suma + i
+
+                print(suma)
+
+                listaCadenas = ["Muchos","años","después",",","frente","al","pelotón","de","fusilamiento"]
+
+                sumaTotalReduce = reduce(MiSuma, listaNumerosPares)
+                sumaTotalReduce = reduce(lambda x,y: x+y,  listaNumerosPares  )
+                productoTotalReduce = reduce( lambda x,y:x/y  , listaNumerosPares)
+                inicioCienAniosSOledad = reduce(lambda x,y: x+" "+y, listaCadenas)
+                print(f"Suma con reduce:{sumaTotalReduce}")
+                print(f"Producto con reduce:{productoTotalReduce}")
+                print(inicioCienAniosSOledad)
+                </code></pre>
+                <p class="temas-texto">
+                    En el código anterior, la función reduce se utiliza para realizar operaciones de 
+                    reducción en listas, aplicando una función binaria (que toma dos argumentos) 
+                    repetidamente hasta que la lista se reduce a un solo valor. En este caso, se usa
+                    para sumar y dividir todos los números en una lista de números pares, y para 
+                    concatenar todas las cadenas en una lista de cadenas. 
+                </p>
+            </li>
+
+            <li><strong>
+                    <h2>Función Anónima Lambda:</h2>
+                </strong> 
+                <p calss="temas-texto">
+                    <strong>Lambda: </strong>Son una forma corta de declarar fucniones pequeñas y anonimas
+                    (no es necesario proporcionar un nombre paralas dunciones lambda). Las funciones lambda
+                    se comportan como funcion normales con la palabra clave def.
+                </p>
+                <p class="temas-texto">
+                    <strong>Funciones anonimas: </strong>Se escribe como una funcion que retorna un valor, pero 
+                    no se define usando la sentencia def. Las funciones anonimas tienen diferentes nombres pueden
+                    ser funciones anonimas, expresiones lambda, entre otras.
+                </p>
+                </li>
+        </ul>
+        <h2>Mapa mental</h2>
+        <p>Mapa mental con los principales temas abordados durante este corte:</p>
+
+        <img src="Programacion funcional en Python.png" class="imagen-primerc">
+    </section>
+
+
+</body>
+
+
+</html>

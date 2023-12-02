@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <header>
+
+        <nav class="nav">
+            <div class="nav_info">
+                <li>
+                    <a href="index.html">
+                        <h1 class="nav_git">Pagina personal <span class="nav_nombre">Lenguajes de
+                                Programación</span>
+                        </h1>
+                    </a>
+                </li>
+            </div>
+            <ul class="">
+                <div class="nav_enlaces">
+                    <li class="nav_opciones">
+                        <a href="index.html">Inicio</a>
+                    </li>
+                    <p class="separador">/</p>
+
+                    <li class="nav_opciones">
+                        <a href="curso.html">Curso</a>
+                    </li>
+                    <p class="separador">/</p>
+
+                    <li class="nav_opciones has-dropdown" id="academico-dropdown">
+                        <a href="#">Cortes</a>
+                        <div class="dropdown-content">
+                            <a href="primerc.html">Primer corte</a>
+                            <a href="segundoc.html">Segundo corte</a>
+                            <a href="tercerc.html">Tercer corte</a>
+
+                        </div>
+            </ul>
+        </nav>
+    </header>
+    <section class="temas">
+        <h1>Temas Vistos en el Tercer Corte</h1>
+        <ul>
+            <li><strong>
+                    <h2>Programacion multihilo:</h2>
+                </strong>
+                <p class="temas-texto">
+                    En el tercer corte, exploramos el tema de programación multihilos, el cual es es un
+                    paradigma de programación que involucra la ejecución concurrente de múltiples hilos
+                    de ejecución en un programa. Un hilo de ejecución, también conocido como hilo o
+                    thread, es la unidad más pequeña de ejecución de un programa. En un entorno multihilo,
+                    un programa se divide en partes más pequeñas, y cada parte se ejecuta de forma
+                    independiente en su propio hilo.
+
+                </p>
+            </li>
+
+            <li><strong>
+                    <h2>Creacion de hilos:</h2>
+                </strong>
+                <p class="temas-texto">Existen dos principles formas de crear hilos en java:</p>
+                <p class="temas-texto">
+                    <strong> Extends Thread:</strong> Extendiendo la clase Thread:
+                <p class="poo">
+                    -Se crea una subclase que extiende Thread y se sobreescribe el método run().
+                    <br>-El hilo se inicia llamando al método start() sobre una instancia de la subclase.
+                </p>
+                Ejemplo:
+                </p>
+                <pre><code>
+                    <strong>class MiHilo extends Thread {
+                    public void run() {
+                       // código del hilo
+                    }
+                 }
+                 
+                 MiHilo hilo = new MiHilo(); 
+                 hilo.start();</strong>
+                </code></pre>
+
+                <p class="temas-texto">
+                    <strong>Implements iunnable:</strong> Implementando la interfaz Runnable:
+                <p class="poo">
+                    -Se crea una clase que implementa la interfaz Runnable y se implementa el método run().
+                    <br>-Se pasa una instancia de esta clase al constructor de Thread.
+                </p>
+                Ejemplo:
+                </p>
+                <pre><code>
+                    <strong> MiHilo implements Runnable {
+                    public void run() {
+                       // código del hilo 
+                    }
+                 }
+                 
+                 MiHilo rh = new MiHilo();
+                 Thread hilo = new Thread(rh);
+                 hilo.start();</strong>
+                </code></pre>
+
+            </li>
+
+            <li><strong>
+                    <h2>Operaciones sobre hilos:</h2>
+                </strong>
+                <p class="temas-texto">
+                    <strong>Join:</strong> El método join se utiliza para esperar a que un hilo específico
+                    termine su ejecución antes de que continúe el hilo actual. Esto es útil cuando se necesita
+                    asegurar que ciertos hilos hayan completado su trabajo antes de que otro hilo continúe
+                    o finalice. El hilo actual se bloquea hasta que el hilo en el que se llama a join haya
+                    finalizado.
+                    <br><br><strong>Ejemplo:
+                        <pre><code>class Tarea extends Thread {
+                        public void run() {
+                            System.out.println("Inicio de la tarea en el hilo: " + Thread.currentThread().getId());
+                            try {
+                                // Simulación de una tarea que toma tiempo
+                                Thread.sleep(2000);
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                            System.out.println("Fin de la tarea en el hilo: " + Thread.currentThread().getId());
+                        }
+                    }
+                    
+                    public class Main {
+                        public static void main(String[] args) {
+                            Tarea tarea1 = new Tarea();
+                            Tarea tarea2 = new Tarea();
+                            Tarea tarea3 = new Tarea();
+                    
+                            tarea1.start();
+                            tarea2.start();
+                            tarea3.start();
+                    
+                            try {
+                                tarea1.join();
+                                tarea2.join();
+                                tarea3.join();
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                    
+                            System.out.println("Todas las tareas han terminado. Mensaje final del hilo principal.");
+                        }
+                    }
+                    </code></pre>
+                    </strong>
+                    <p class="temas-texto"> En este ejemplo tenemos tres hilos que realizan tareas independientes, 
+                        pero queremos asegurarnos de que el hilo principal espere a que todos terminen antes de 
+                        imprimir un mensaje final.</p>
+                </p>
+
+
+                <p class="temas-texto">
+                    <strong>Sleep:</strong> El método sleep se utiliza para pausar la
+                    ejecución de un hilo durante un período específico de tiempo. Esto es útil para introducir
+                    retrasos o pausas en la ejecución de un hilo. El tiempo se especifica en milisegundos,
+                    y el hilo en el que se llama a sleep se detendrá durante ese tiempo antes de continuar
+                    su ejecución.
+                    <br><br><strong>Ejemplo: 
+                        <pre><code>public class Main {
+                            public static void main(String[] args) {
+                                for (int i = 1; i &lt;= 5; i++) {
+                                    System.out.println("Mensaje " + i);
+                        
+                                    try {
+                                        // Pausar el hilo principal durante 1 segundo
+                                        Thread.sleep(1000);
+                                    } catch (InterruptedException e) {
+                                        e.printStackTrace();
+                                    }
+                                }
+                        
+                                System.out.println("Fin del programa.");
+                            }
+                        }
+                        </code></pre>
+                    </strong>
+                    <p class="temas-texto"> En este ejemplo, el hilo principal imprime un mensaje 
+                        cada segundo, pausándose con sleep entre cada mensaje. Esto podría representar 
+                        un escenario donde queremos introducir un retraso entre ciertas operaciones o 
+                        imprimir mensajes a intervalos específicos.</p>
+                </p>
+
+            </li>
+
+            <li><strong>
+                    <h2>Ejemplos:</h2>
+                </strong>
+                <p calss="temas-texto">
+                    En el siguiente ejemplo podemos observar la utilizacion de hilos para realizar operaciones
+                    concurrentes en una cuenta bancaria.
+                    <pre><code>
+                        public class Main extends Thread {
+                        public void run() { // metodo que se ejecuta por cada instancia en el hilo
+                            System.out.println("Ejecutando hilo" + Thread.currentThread().getId());
+                        }
+                    
+                        public static void main(String[] args) {
+                            Account myAccount = new Account(50000000);
+                            // crear 2 hilos para las dos operaciones CONCURRENTES sobre la cuenta
+                            Thread hiloRetiro = new Thread(() -> myAccount.withdraw(200000));
+                            Thread hiloDeposito = new Thread(() -> myAccount.deposit(5000));
+                            Thread[] hilosRetiro = new Thread[8];
+                            for (int i = 0; i &lt; hilosRetiro.length; i++) {
+                                hilosRetiro[i] = new Thread(() -> myAccount.withdraw(100000));
+                    
+                            }
+                            // iniciar los hilos
+                            hiloRetiro.start();
+                            hiloDeposito.start();
+                            // unir los hilos a este hilo principal (main)
+                            try {
+                                hiloDeposito.join();
+                                hiloRetiro.join();
+                                for (Thread t : hilosRetiro) {
+                                    t.join();
+                                    System.out.print(t.getId());
+                                }
+                            } catch (InterruptedException e) {
+                                // TODO Auto-generated catch block
+                                e.printStackTrace();
+                            }
+                            //
+                            System.out.println("balance final:" + myAccount.getBalance());
+                    
+                            // operaciones secuenciales:
+                    
+                            myAccount.deposit(500000);
+                            myAccount.withdraw(40000);
+                        }
+                    
+                    }</code></pre>
+
+                    <p class="poo">El primer hilo retira 200.000 del saldo de la cuenta, y el segundo hilo 
+                        deposita 5.000, se utiliza el método join() para sincronizar la ejecución de los hilos.</p>
+                </p>
+                <p calss="temas-texto">
+                    El siguiente codigoimplementa la suma de dos matrices de 4x4 utilzando hilos.
+                    <pre><code>
+                        public class SumaMatrices extends Thread {
+                            // Matrices de entrada
+                            private static int[][] matrizA = { { 1, 2, 3, 4 }, { 5, 6, 7, 8 }, { 9, 10, 11, 12 }, { 13, 14, 15, 16 } };
+                            private static int[][] matrizB = { { 16, 15, 14, 13 }, { 12, 11, 10, 9 }, { 8, 7, 6, 5 }, { 4, 3, 2, 1 } };
+                            // Matriz de salida
+                            private static int[][] matrizC = new int[4][4];
+                            // Columna que le corresponde a cada hilo
+                            private int columna;
+                        
+                            // Constructor que recibe la columna asignada
+                            public SumaMatrices(int columna) {
+                                this.columna = columna;
+                            }
+                        
+                            // Método que se ejecuta al iniciar el hilo
+                            public void run() {
+                                // Recorremos las filas de la columna asignada
+                                for (int i = 0; i &lt; 4; i++) {
+                                    // Sumamos los elementos de las matrices de entrada y guardamos el resultado en
+                                    // la matriz de salida
+                                    matrizC[i][columna] = matrizA[i][columna] + matrizB[i][columna];
+                                }
+                            }
+                        
+                            // Método para imprimir una matriz
+                            public static void imprimirMatriz(int[][] matriz) {
+                                for (int i = 0; i &lt; 4; i++) {
+                                    for (int j = 0; j &lt; 4; j++) {
+                                        System.out.print(matriz[i][j] + " ");
+                                    }
+                                    System.out.println();
+                                }
+                            }
+                        
+                            // Método principal
+                            public static void main(String[] args) throws InterruptedException {
+                                // Creamos cuatro hilos, uno por cada columna
+                                SumaMatrices hilo1 = new SumaMatrices(0);
+                                SumaMatrices hilo2 = new SumaMatrices(1);
+                                SumaMatrices hilo3 = new SumaMatrices(2);
+                                SumaMatrices hilo4 = new SumaMatrices(3);
+                        
+                                // Iniciamos los hilos
+                                hilo1.start();
+                                hilo2.start();
+                                hilo3.start();
+                                hilo4.start();
+                        
+                                // Esperamos a que terminen los hilos
+                                hilo1.join();
+                                hilo2.join();
+                                hilo3.join();
+                                hilo4.join();
+                        
+                                // Imprimimos las matrices de entrada y salida
+                                System.out.println("Matriz A:");
+                                imprimirMatriz(matrizA);
+                                System.out.println("Matriz B:");
+                                imprimirMatriz(matrizB);
+                                System.out.println("Matriz C = A + B:");
+                                imprimirMatriz(matrizC);
+                            }
+                        }
+                        
+                    </code></pre>
+                    <p class="poo">Cada hilo es responsable de sumar los elementos de una columna de la matriz
+                         de salida, divide el trabajo en cuatro partes. Esta implementación es eficiente
+                          porque permite que cada hilo procese su parte de la matriz de forma independiente, 
+                          lo que mejora significativamente el rendimiento de la suma de matrices.
+
+                     .</p>
+                </p>
+                
+    </section>
+
+
+</body>
+
+
+</html>
